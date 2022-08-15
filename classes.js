@@ -1,6 +1,7 @@
-class Student {
+
+class Human {
     name = ""
-    grade = 100
+    // grade = 100
     constructor(name) {
         this.name = name
     }
@@ -9,9 +10,23 @@ class Student {
     }
 }
 
+class Teacher extends Human {
+    currentlyTeaching = "yes"
+    sayHi() { // overriding old sayHi
+        return `Hi, Im a professor ${this.name}!`
+
+    }
+}
+
+class Student extends Human {
+    grade = 100
+}
+
 let student1 = new Student("Bobbie")
 let student2 = new Student("Jennifer")
+let teacher = new Teacher("Abby")
 
 console.log(student1.name)
-console.log(student1.grade)
-console.log(student1.sayHi())
+console.log(teacher.name)
+// console.log(student1.grade)
+// console.log(student1.sayHi())
